@@ -16,13 +16,7 @@
 						2021 SpacePi. All Rights Reserved -->{{this.$t('footer1')}} {{this.$t('footer2')}}</p>
 				</div>
 				<div class="b-c-img">
-					<img @click="Jump(url[0])" src="../../../assets/twitter-fill.png" class="c-img" />
-					<img @click="Jump(url[1])" src="../../../assets/telegram.png" class="c-img" />
-					<img @click="Jump(url[2])" src="../../../assets/discord.png" class="c-img" />
-					<img @click="Jump(url[3])" src="../../../assets/reddit.png" class="c-img" />
-					<img @click="Jump(url[4])" src="../../../assets/github.png" class="c-img" />
-					<img @click="Jump(url[5])" src="../../../assets/medium.png" class="c-img" />
-					<img @click="Jump(url[6])" src="../../../assets/copy.png" class="c-img" />
+					<img @click="Jump(item.link)" :src="item.picture" class="c-img" v-for="(item,index) in url"  :key="index"/>
 				</div>
 			</div>
 		</div>
@@ -30,31 +24,43 @@
 </template>
 
 <script>
+	import axios from "axios";
+	import { mapState, mapMutations } from "vuex";
 	export default {
 		data() {
 			return {
 				buttext:this.$t('Community')['buttext_url'],
-				url:[
-					this.$t('footer_twitter_url'),
-					this.$t('footer_telegram_url'),
-					this.$t('footer_discord_url'),
-					this.$t('footer_reddit_url'),
-					this.$t('footer_github_url'),
-					this.$t('footer_medium_url'),
-					this.$t('footer_copy_url')
-				]
+				url:[]
 			};
 		},
 		props: {},
-		computed: {},
+		computed: {
+			...mapState([
+                "domainUrl",
+            ]),
+		},
 		watch: {},
 		components: {},
-		created() {},
+		created() {
+			this.location();
+		},
 		mounted() {},
 		methods: {
+			location(){
+				this.bottomPartners();
+			},
 			Jump(e) {
 				window.open(e)
 			},
+			//获取底部友情链接
+			bottomPartners() {
+				var _this = this;
+                axios.post(this.domainUrl+"bottomPartners",{}).then(function(response){
+                    _this.url = response.data.data;
+                }).catch(function(error) {
+                    //     // 请求失败处理
+                });
+			}
 		},
 	};
 </script>

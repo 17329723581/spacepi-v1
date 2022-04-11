@@ -254,7 +254,6 @@ export default {
       axios
         .post(this.domainUrl + "spacepiMenu")
         .then(function (response) {
-          console.log("数据", response.data.data);
           _this.menu = response.data.data;
         })
         .catch(function (error) {
