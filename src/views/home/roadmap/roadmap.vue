@@ -295,13 +295,13 @@
 			display: none;
 		}
 		.layout {
-			margin-top: 3.125rem;
+			margin-top: 10px;
 			width: 100%;
 			float: left;
 			text-align: center;
 
 			.font-title-color-b {
-				font-size: 2.25rem;
+				font-size: 35px;
 				font-family: DIN;
 				font-weight: bold;
 				color: #FFFFFF;
@@ -309,18 +309,18 @@
 			}
 
 			.font-content-color-y {
-				font-size: 1.5625rem;
 				font-family: DIN;
 				font-weight: bold;
 				color: #FDD333;
-				opacity: 1;
+				font-size: 20px;
+    			line-height: 30px;
 			}
 
 			.layout-content {
 				width: 100%;
 				float: left;
 				display: flex;
-				margin-top: 5rem;
+    			margin-top: 70px;
 				.font-16{
 					font-size: 1rem;
 				}
@@ -333,7 +333,7 @@
 				}
 				.layout-content-c {
 					width: 50%;
-					line-height: 1.25rem;
+					line-height: 30px;
 					float: left;
 					.text-layout{
 						width: 75%;
@@ -342,19 +342,16 @@
 							display: flex;
 							text-align: left;
 							margin-top: 1rem;
-							
 						}
 					}
-					
 				}
-				
 
 			}
 		}
 
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 950px) {
 		.warp {
 			.pc{
 				display: none;
@@ -417,5 +414,62 @@
 				}
 			}
 		}
+	}
+	@media screen and (max-width: 1200px) {
+
+		.warp {
+			.m{
+				display: none;
+			}
+			.layout {
+				margin-top: 0;
+				width: 100%;
+				float: left;
+				text-align: center;
+
+				.font-title-color-b {
+					font-size: 28px;
+				}
+
+				.font-content-color-y {
+					font-size: 15px;
+    				line-height: 25px;
+				}
+
+				.layout-content {
+					width: 100%;
+					float: left;
+					display: flex;
+					margin-top: 70px;
+					.font-16{
+						font-size: 1rem;
+					}
+					.font-18 {
+						font-size: 1.125rem;
+					}
+
+					.font-35 {
+						font-size: 2.1875rem;
+					}
+					.layout-content-c {
+						width: 50%;
+						line-height: 25px;
+						float: left;
+						.text-layout{
+							width: 75%;
+							.text{
+								width: 100%;
+								display: flex;
+								text-align: left;
+								margin-top: 1rem;
+							}
+						}
+					}
+
+				}
+			}
+
+		}
+
 	}
 </style>

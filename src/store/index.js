@@ -34,7 +34,7 @@ export default new Vuex.Store({
     //百分比
     percentage:0,
     //正式域名
-    domainUrl:'https://resource.space-pi.com/api/',
+    domainUrl:'https://resource.space-pi.com/api/',//https://resource.space-pi.com/api/ https://resourcetest.space-pi.com/api/
 
   },
   mutations: {

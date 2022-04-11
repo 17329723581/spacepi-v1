@@ -77,7 +77,17 @@
 		height: 100%;
 		z-index: 0;
 	}
-	@media screen and (min-width: 768px) {
+	.header-background {
+		background: rgba(33, 21, 59, 0.8);
+	}
+	.bg {
+		background: url("../../assets/homebgimgpc.png");
+
+		background-size: cover;
+    	background-position: center center;
+
+	}
+	@media screen and (max-width: 950px) {
 		.header-background {
 			background: rgba(33, 21, 59, 0.8);
 		}
@@ -91,7 +101,7 @@
 		}
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 1200px) {
 		.bg {
 			background: url("../../assets/homebgimgm.png");
 			background-repeat: no-repeat;

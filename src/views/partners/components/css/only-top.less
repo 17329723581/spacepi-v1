@@ -3,7 +3,7 @@
     .only-top-container{
         display: flex;
         justify-content: space-between;
-        padding-top: 3.9vw;
+        padding-top: 20px;
         font-family: Alibaba PuHuiTi;
         position: relative;
         .left{
@@ -11,14 +11,14 @@
             position: inherit;
             .title{
                 color: #fff;
-                font-size: 1.7vw;
+                font-size: 25px;
                 font-weight: 800;
             }
             .text{
-                padding-top: 0.8vw;
-                font-size: 1vw;
+                padding-top: 12.5px;
+                font-size: 20px;
                 font-weight: 500;
-                line-height: 1.5vw;
+                line-height: 30px;
                 color: #FFCC33;
             }
             .button{
@@ -36,11 +36,11 @@
             }
         }
         .right{
-            width: 30%;
+            width: 400px;
         }
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
     .warp{
         .only-top-container{
             flex-direction: column-reverse;
@@ -64,6 +64,51 @@
             .right{
                 display: none;
                 width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .warp{
+        width: 100%;
+        .only-top-container{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 20px;
+            font-family: Alibaba PuHuiTi;
+            position: relative;
+            .left{
+                width: 100%;
+                position: inherit;
+                .title{
+                    color: #fff;
+                    font-size: 20px;
+                    font-weight: 800;
+                }
+                .text{
+                    padding-top: 10.5px;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 35px;
+                    color: #FFCC33;
+                }
+                .button{
+                    position:absolute;
+                    right: 0;
+                    padding-top: 1vw;
+                    button{
+                        background: #FFCC33;
+                        border-radius: 0.4vw;
+                        border: 0;
+                        font-size: 1.1vw;
+                        font-weight: 400;
+                        color: #333333;
+                    }
+                }
+            }
+            .right{
+                width: 300px;
             }
         }
     }

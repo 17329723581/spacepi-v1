@@ -145,7 +145,7 @@
 		}
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 950px) {
 		.warp {
 			.firstTokenpc {
 				display: none;
@@ -210,7 +210,7 @@
 	.ant-carousel>>>.custom-slick-arrow:hover {
 		opacity: 0.5;
 	}
-	@media screen and (min-width: 768px) {
+	@media screen and (max-width: 950px) {
 
 		/* For demo */
 		.ant-carousel>>>.slick-slide {
@@ -237,7 +237,7 @@
 		}
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 950px) {
 
 		/* For demo */
 		.ant-carousel>>>.slick-slide {

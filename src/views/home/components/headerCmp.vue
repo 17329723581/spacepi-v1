@@ -3,11 +3,11 @@
     <div class="header-logo" id="top">
       <div class="header-logo-pc">
         <a href="">
-          <img src="@/assets/logo.png" alt="" style="width: 4.375rem;" />
+          <img src="@/assets/logo.png" />
           <img
             src="@/assets/spacepi.png"
             alt=""
-            style="width: 6.25rem;margin-left: 0.9375rem;"
+            style="width: 6.25rem; margin-left: 0.9375rem"
           />
         </a>
       </div>
@@ -26,22 +26,30 @@
         >
           <a href="javascript:;">{{ item.title }}</a>
         </li>
-        <div v-for="(item,index) in menu" :key="index">
-          <li v-if="lang.split('-').length>1" @click="Jump(item.link)">
-            <a href="javascript:;">{{item[lang.split('-')[0]+"_"+lang.split('-')[1]]}}</a>
+        <div v-for="(item, index) in menu" :key="index">
+          <li v-if="lang.split('-').length > 1" @click="Jump(item.link)">
+            <a href="javascript:;">{{
+              item[lang.split("-")[0] + "_" + lang.split("-")[1]]
+            }}</a>
           </li>
           <li v-else @click="Jump(item.link)">
-            <a href="javascript:;">{{item[lang]}}</a>
+            <a href="javascript:;">{{ item[lang] }}</a>
           </li>
         </div>
+
         <li class="lang">
           <a-icon type="global" />
           <a-dropdown :trigger="['click']">
             <a class="ant-dropdown-link" @click="(e) => e.preventDefault()">
               {{ langName }}
-              <a-icon type="caret-down" style="color: #5A51A8;" />
+              <a-icon type="caret-down" style="color: #5a51a8" />
             </a>
-            <a-menu slot="overlay" class="dow" @click="changeLang" style="width: min-content;">
+            <a-menu
+              slot="overlay"
+              class="dow"
+              @click="changeLang"
+              style="width: min-content"
+            >
               <a-menu-item v-for="item of langList" :key="item.key">
                 <a href="javascript:;">{{ item.name }}</a>
               </a-menu-item>
@@ -55,11 +63,16 @@
       <div class="m-header-dow">
         <a-icon type="global" style="color: #fff" />
         <a-dropdown :trigger="['click']">
-          <a class="ant-dropdown-link" @click="(e) => e.preventDefault()">
+          <a class="ant-dropdown-link" style="margin-right: 20px;" @click="(e) => e.preventDefault()">
             {{ langName }}
-            <a-icon type="caret-down" style="color: #5A51A8;" />
+            <a-icon type="caret-down" style="color: #5a51a8" />
           </a>
-          <a-menu slot="overlay" class="dow" @click="changeLang" style="width: min-content;">
+          <a-menu
+            slot="overlay"
+            class="dow"
+            @click="changeLang"
+            style="width: min-content"
+          >
             <a-menu-item v-for="item of langList" :key="item.key">
               <a href="javascript:;">{{ item.name }}</a>
             </a-menu-item>
@@ -67,13 +80,11 @@
         </a-dropdown>
       </div>
       <div class="m-memu-i" @click.stop="changeMemu = true">
-        <a-icon type="menu" style="font-size: 1.5625rem;" />
+        <a-icon type="menu" style="font-size: 1.5625rem" />
       </div>
       <div class="m-nav" :class="{ show: changeMemu }">
         <ul>
-          <div style="margin-top: -20px;text-align: center">
-            
-          </div>
+          <div style="margin-top: -20px; text-align: center"></div>
           <li
             v-for="item in nav"
             :key="item.name"
@@ -81,12 +92,14 @@
           >
             <a href="javascript:;">{{ item.title }}</a>
           </li>
-          <div v-for="(item,index) in menu" :key="index">
-            <li v-if="lang.split('-').length>1" @click="Jump(item.link)">
-              <a href="javascript:;">{{item[lang.split('-')[0]+"_"+lang.split('-')[1]]}}</a>
+          <div v-for="(item, index) in menu" :key="index">
+            <li v-if="lang.split('-').length > 1" @click="Jump(item.link)">
+              <a href="javascript:;">{{
+                item[lang.split("-")[0] + "_" + lang.split("-")[1]]
+              }}</a>
             </li>
             <li v-else @click="Jump(item.link)">
-              <a href="javascript:;">{{item[lang]}}</a>
+              <a href="javascript:;">{{ item[lang] }}</a>
             </li>
           </div>
         </ul>
@@ -101,19 +114,23 @@ import { mapMutations, mapState } from "vuex";
 export default {
   data() {
     return {
-      menu:[],
-      shows:false,
+      menu: [],
+      menu_state: false,
+      shows: false,
       url_array: [
         this.$t("url_array")[0],
         {
-          url:this.$t("footer_twitter_url"),
-        },{
-          url:this.$t("index_English_Telegram"),
-        },{
-          url:this.$t("index_Chinese_Telegram"),
-        },{
-          url:this.$t("index_SpacePi_Bscscan"),
-        }
+          url: this.$t("footer_twitter_url"),
+        },
+        {
+          url: this.$t("index_English_Telegram"),
+        },
+        {
+          url: this.$t("index_Chinese_Telegram"),
+        },
+        {
+          url: this.$t("index_SpacePi_Bscscan"),
+        },
       ],
       changeMemu: false,
       nav: [
@@ -129,38 +146,45 @@ export default {
         {
           key: "en-US",
           name: "English",
-        },{
+        },
+        {
           key: "tr-TR",
           name: "Türk",
-        },{
+        },
+        {
           key: "ko-KR",
           name: "한국어",
-        },{
+        },
+        {
           key: "ja-JP",
           name: "日本",
-        },{
+        },
+        {
           key: "in",
           name: "Indonesia",
-        },{
+        },
+        {
           key: "th",
           name: "ไทย",
-        }
-        ,{
+        },
+        {
           key: "ar",
           name: "عربي",
-        },{
+        },
+        {
           key: "zh-TW",
           name: "繁體中文",
-        },{
+        },
+        {
           key: "zh-CN",
           name: "简体中文",
-        }
+        },
       ],
     };
   },
   props: {},
   computed: {
-    ...mapState(["lang",'domainUrl']),
+    ...mapState(["lang", "domainUrl"]),
   },
   watch: {},
   components: {},
@@ -171,12 +195,20 @@ export default {
     this.location();
   },
   mounted() {
+    /*window.screenWidth = document.body.clientWidth;
+    this.menu_state = window.screenWidth < 950;*/
     // 模拟外部点击  关闭移动端侧边导航
     document.addEventListener("click", (e) => {
       if (e.target.className !== "m-nav show") {
         this.changeMemu = false;
       }
     });
+    /*this.$nextTick(() => {
+      window.addEventListener("resize", () => {
+        window.screenWidth = document.body.clientWidth;
+        this.menu_state = window.screenWidth < 950;
+      });
+    });*/
   },
   methods: {
     ...mapMutations(["updateLang"]),
@@ -200,34 +232,35 @@ export default {
       });
     },
     Jump(e) {
-				if (this.show == true) {
-					this.show = false;
-				} else {
-					this.show = true;
-				}
-				window.open(e)
-			},
-    showss(){
-      if(this.shows ==true){
+      if (this.show == true) {
+        this.show = false;
+      } else {
+        this.show = true;
+      }
+      window.open(e);
+    },
+    showss() {
+      if (this.shows == true) {
         this.shows = false;
-      }else{
+      } else {
         this.shows = true;
       }
     },
-    location()
-    {
-        this.getMenu();
+    location() {
+      this.getMenu();
     },
-    getMenu()
-    {
+    getMenu() {
       var _this = this;
-      axios.post(this.domainUrl+"spacepiMenu").then(function(response){
-        console.log('数据',response.data.data);
-        _this.menu = response.data.data;
-      }).catch(function(error) {
-         //     // 请求失败处理
-      });
-    }
+      axios
+        .post(this.domainUrl + "spacepiMenu")
+        .then(function (response) {
+          console.log("数据", response.data.data);
+          _this.menu = response.data.data;
+        })
+        .catch(function (error) {
+          //     // 请求失败处理
+        });
+    },
   },
 };
 </script>
@@ -236,7 +269,7 @@ export default {
 header {
   width: 100%;
   // padding: 53px 0 0;
-  height: 90px;
+  height: 4.7vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -245,7 +278,7 @@ header {
     z-index: 99;
 
     img {
-      width: 90%;
+      width: 3.7vw;
     }
   }
   .header-logo-m {
@@ -283,13 +316,12 @@ ul {
 
     a {
       color: #fff;
-      font-size: 1.1rem;
+      font-size:15px;
       font-weight: 800;
     }
   }
 }
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   header {
     // width: 100vw;
     // padding: 30px 0 0;
@@ -319,7 +351,6 @@ ul {
 
   .m-header-nav {
     display: block;
-    width: 35%;
 
     .m-header-dow {
       float: left;
@@ -358,7 +389,7 @@ ul {
       // min-height: 100vh;
       // box-shadow: 0px 2px 4px rgb(50, 191, 247);
       // background: #ffffff !important;
-      background-color: rgba(90,81,168,0.6);
+      background-color: rgba(90, 81, 168, 0.6);
       transition: all 0.3s;
       backdrop-filter: blur(25px);
       padding-top: 50px;

@@ -6,24 +6,24 @@
 					<!-- PC端 -->
 					<div class="homebodybgpc">
 						<div>
-							<img src="@/assets/spacepititle.png" alt="" style="width:21.25rem" />
+							<img src="@/assets/spacepititle.png"/>
 						</div>
 						<div class="margin-top-1">
 							<span
-								style="font-family: Alibaba PuHuiTi;font-size: 20px;font-weight:bold;color: #FFFFFF;">{{ this.$t("only") }}
+								class="only">{{ this.$t("only") }}
 							</span>
 						</div>
 						<div class="margin-top-1" style="display: flex;justify-content: center;">
 							<div style="width: 50rem;">
 								<span
-									style="font-family: Alibaba PuHuiTi;font-size: 16px;font-weight: bold;color: #FFFFFF;">{{ this.$t("introduce") }}</span>
+									class="introduce">{{ this.$t("introduce") }}</span>
 							</div>
 						</div>
 						<div>
 							<div class="margin-top-5" style="position: 15px 0;">
 								<div style="height: 3.75rem; display: flex;justify-content: center;">
 									<div class="menu-but" style="z-index:999" v-for="(item,index) in spacepiBuntton" :key="index">
-										<button @click="item.staus!=1?to(item.link):''" style="height:3.75rem;border-radius: 0.25rem;float: left;border: 0rem;font-size: 1rem;font-family: DIN;font-weight: bold;margin: 0.5rem;white-space:nowrap;" class="spacepi-button">
+										<button @click="item.staus!=1?to(item.link):''" style="border-radius: 0.25rem;float: left;border: 0rem;font-size: 1rem;font-family: DIN;font-weight: bold;margin: 0.5rem;white-space:nowrap;" class="spacepi-button">
 											<template v-if="lang.split('-').length>1">
 												<template v-if="item.staus==0">
 													{{item[lang.split('-')[0]+"_"+lang.split('-')[1]]}}
@@ -67,20 +67,17 @@
 								</div>
 							</div>
 
-							<div style="margin-top: 1.875rem;">
-								<span style="font-family: Alibaba PuHuiTi;font-size: 1.25rem;font-weight:bold;color: #FDD333;">{{ this.$t("happy_text") }}</span>
+							<div class="margin-happy_text">
+								<span>{{ this.$t("happy_text") }}</span>
 							</div>
-							<div style="margin-top: 1.875rem;">
-								<div
-									style="width: 100%;height: 4vw;background: #2C1D51;border: 1px solid #FFFFFF;border-radius: 0.25rem;">
+							<div class="margin-address">
+								<div class="address-but">
 									<div style="float: left;width: 95%;">
-										<span
-											style="font-size: 1.5vw;font-family: DIN;font-weight: 400;color: #FFFFFF;line-height:4vw;float: left;margin-left:2.5%">{{ address }}</span>
+										<span class="address">{{ address }}</span>
 									</div>
-									<div style="float: right;width: 5%;">
+									<div class="onCopy-right">
 										<span v-clipboard:copy="address" v-clipboard:success="onCopy">
-											<a-icon type="copy"
-												style="font-size: 1.25vw;font-family: DIN;font-weight: 400;color: #FDD333;line-height:4vw;float: left;"
+											<a-icon type="copy" class="onCopy"
 												v-clipboard:success="onCopy" />
 										</span>
 									</div>
@@ -97,11 +94,11 @@
 									</a-col>
 								</a-row>
 							</div>
-							<div style="margin-top: 2.5vw;float: left;width: 100%;">
-								<span style="font-family: Alibaba PuHuiTi;font-size: 1.25rem;font-weight:bold;color: #FDD333;">{{ this.$t("happy_text1") }}</span>
+							<div class="margin-happy_text1">
+								<span class="happy_text1">{{ this.$t("happy_text1") }}</span>
 							</div>
-							<div style="margin-top: 1vw;float: left;width: 100%;">
-								<span style="font-family: Alibaba PuHuiTi;font-size: 1.25rem;font-weight:bold;color: #FDD333;">{{ this.$t("happy_text2") }}</span>
+							<div class="margin-happy_text1">
+								<span class="happy_text1">{{ this.$t("happy_text2") }}</span>
 							</div>
 							<!-- 合作商链接 -->
 							<div style="margin-top:2.5vw;float: left;">
@@ -110,7 +107,7 @@
 										<a-col class="gutter-row"  v-for="(item,index) in partners" :key="index" :span="18">
 											<div class="gutter-box" style="">
 												<a @click="to(item.link)">
-													<img :src="item.picture" style="border-radius: 0.25vw;width: 100%;">
+													<img :src="item.picture" style="width: 100%;">
 												</a>
 											</div>
 										</a-col>
@@ -119,7 +116,7 @@
 										<a-col class="gutter-row"  v-for="(item,index) in partners" :key="index" :span="10">
 											<div class="gutter-box" style="">
 												<a @click="to(item.link)">
-													<img :src="item.picture" style="border-radius: 0.25vw;width: 100%;">
+													<img :src="item.picture" style="width: 100%;">
 												</a>
 											</div>
 										</a-col>
@@ -128,7 +125,7 @@
 										<a-col class="gutter-row"  v-for="(item,index) in partners" :key="index" :span="6">
 											<div class="gutter-box" style="">
 												<a @click="to(item.link)">
-													<img :src="item.picture" style="border-radius: 0.25vw;width: 100%;">
+													<img :src="item.picture" style="width: 100%;">
 												</a>
 											</div>
 										</a-col>
@@ -137,16 +134,16 @@
 										<a-col class="gutter-row"  v-for="(item,index) in partners" :key="index" :span="4">
 											<div class="gutter-box" style="">
 												<a @click="to(item.link)">
-													<img :src="item.picture" style="border-radius: 0.25vw;width: 100%;">
+													<img :src="item.picture" style="width: 100%;">
 												</a>
 											</div>
 										</a-col>
 									</div>
 								</a-row>
 							</div>
-							<div style="margin-top:2.5vw;float: left;display: flex;justify-content: center;align-items: center;width: 100%;">
-								<button @click="jumps('partners')"
-									style="height:3.75rem;border-radius: 0.25rem;float: left;border: 0rem;font-size: 1rem;font-family: DIN;font-weight: bold;margin: 0.5rem;white-space:nowrap;" class="spacepi-button">
+							<div class="happy_gd" style="">
+								<button @click="to('/#/partners')"
+									style="border-radius: 0.25rem;float: left;border: 0rem;font-size: 1rem;font-family: DIN;font-weight: bold;margin: 0.5rem;white-space:nowrap;" class="spacepi-button">
 									{{this.$t('happy_gd')}}
 								</button>
 							</div>
@@ -242,7 +239,7 @@
 									<a-col class="gutter-row" :span="24"  v-for="(item,index) in telegraph" :key="index">
 										<div class="gutter-box">
 											<a @click="to(item.link)">
-												<img :src="item.m_picture" style="width: 100%;border-radius: 1.25vw;height: 15vw;">
+												<img :src="item.m_picture" style="width: 100%;">
 											</a>
 										</div>
 									</a-col>
@@ -253,7 +250,7 @@
 									<a-col class="gutter-row" :span="12"  v-for="(item,index) in telegraph" :key="index">
 										<div class="gutter-box">
 											<a @click="to(item.link)">
-												<img :src="item.m_picture" style="width: 100%;border-radius: 1.25vw;height: 15vw;">
+												<img :src="item.m_picture" style="width: 100%;">
 											</a>
 										</div>
 									</a-col>
@@ -266,12 +263,6 @@
 						<div style="margin-top: 1vw;float: left;width: 100%;">
 							<span style="font-family: Alibaba PuHuiTi;font-size: 1.25rem;font-weight:bold;color: #FDD333;">{{ this.$t("happy_text2") }}</span>
 						</div>
-						<div style="margin-top:2.5vw;float: left;display: flex;justify-content: center;align-items: center;width: 100%;">
-							<button @click="jumps('partners')"
-									style="height:3.75rem;border-radius: 0.25rem;float: left;border: 0rem;font-size: 1rem;font-family: DIN;font-weight: bold;margin: 0.5rem;white-space:nowrap;" class="spacepi-button">
-								{{this.$t('happy_gd')}}
-							</button>
-						</div>
 						<!-- 合作商链接 -->
 						<div style="margin-top: 5vw;  float: left;">
 							<a-row :gutter="[12,12]">
@@ -279,7 +270,7 @@
 									<a-col class="gutter-row" :span="24"  v-for="(item,index) in partners" :key="index" style="">
 										<div class="gutter-box" style="">
 											<a @click="to(item.link)">
-												<img :src="item.picture" style="width: 100%;border-radius: 1.25vw;height: 15vw;">
+												<img :src="item.picture" style="width: 100%;">
 											</a>
 										</div>
 									</a-col>
@@ -288,12 +279,18 @@
 									<a-col class="gutter-row" :span="12"  v-for="(item,index) in partners" :key="index" style="">
 										<div class="gutter-box" style="">
 											<a @click="to(item.link)">
-												<img :src="item.picture" style="width: 100%;border-radius: 1.25vw;height: 15vw;">
+												<img :src="item.picture" style="width: 100%;">
 											</a>
 										</div>
 									</a-col>
 								</div>
 							</a-row>
+						</div>
+						<div style="margin-top:2.5vw;float: left;display: flex;justify-content: center;align-items: center;width: 100%;">
+							<button @click="jumps('partners')"
+									style="height:3.75rem;border-radius: 0.25rem;float: left;border: 0rem;font-size: 1rem;font-family: DIN;font-weight: bold;margin: 0.5rem;white-space:nowrap;" class="spacepi-button">
+								{{this.$t('happy_gd')}}
+							</button>
 						</div>
 					</div>
 				</div>
@@ -497,9 +494,9 @@
 		display: none;
 		position: absolute;
 		width: 100%;
-		top: 4.2rem;
+		top: 50px;
 		left: 0;
-		padding-top: 0.25vw;
+		padding-top: 1vw;
 	}
 	.menu-but:hover{
 		position: relative;
@@ -517,7 +514,7 @@
 	}
 	.spacepi {
 		width: 100%;
-		padding: 50% 0 0px;
+		padding: 600px 0 0px;
 		font-family: DIN;
 
 		.spacepi-right {
@@ -529,7 +526,7 @@
 			display: none;
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 950px) {
 			padding: 100% 0 50px;
 
 			.spacepi-left {
@@ -647,7 +644,7 @@
 			}
 		}
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 950px) {
 			.spacepi-left {
 				h1 {
 					font-size: 2.5rem;
@@ -766,7 +763,7 @@
 				z-index: 99;
 			}
 
-			@media screen and (max-width: 768px) {
+			@media screen and (max-width: 950px) {
 				img {
 					position: absolute;
 					right: 0;

@@ -7,8 +7,7 @@
 					<div style="display: flex;">
 						<!-- 图片 -->
 						<div style="width: 50%;float: left;">
-							<img src="@/assets/car1.png" alt=""
-								style="width: 90%;height:100%;background-size: cover;border-radius: 0.25rem;object-fit: cover;" />
+							<img src="@/assets/car1.png"  class="car-img" />
 						</div>
 						<!-- 卡片 -->
 						<div style="width: 50%;float: right;">
@@ -27,24 +26,23 @@
 							</div>
 						</div>
 						<!-- 图片 -->
-						<div style="width: 50%;margin-top: 1.5rem;float: right;">
-							<img src="@/assets/car2.png" alt=""
-								style="width: 90%;height: 100%;background-size: cover;border-radius: 0.25rem;object-fit: scale-down;" />
+						<div style="width: 50%;margin-top: 1.5rem;float: right;display: flex;align-items: center;">
+							<img src="@/assets/car2.png" alt="" style="width: 90%;"/>
 						</div>
 					</div>
 				</div>
 				<!-- What is SpacePi？ -->
-				<div style="width: 50%;float: right;height:100%;padding-left: 1.25rem;position:relative;">
+				<div class="doge">
 					<div>
 						<span class="font-color-b">{{this.$t('doge')}}</span>
 					</div>
-					<div class="font-color-y" style="padding-top: 0.9375rem;font-size: 1.0625rem;">
+					<div class="font-color-y" style="padding-top: 0.9375rem;">
 						{{this.$t('text')[0]}}
 					</div>
-					<div class="font-color-y" style="padding-top: 1.5rem;font-size: 1.0625rem;">
+					<div class="font-color-y" style="padding-top: 1.5rem;">
 						{{this.$t('text')[1]}}
 					</div>
-					<div class="font-color-y" style="padding-top: 1.5rem;font-size: 1.0625rem;">
+					<div class="font-color-y" style="padding-top: 1.5rem;">
 						{{this.$t('text')[2]}}
 					</div>
 					<!--<div style="position:relative;width: 50%;height: 3.75rem;margin-top: 10%;">
@@ -58,28 +56,27 @@
 					</div>-->
 				</div>
 				<div style="display: flex;width: 100%;height:auto;">
-					<div style="margin-top: 10rem; width: 100%;font-family: DIN;">
+					<div class="station">
 						<!-- ENTER THE STARL METAVERSE -->
 						<div style="width: 50%;float: left;">
 							<div style="width: 100%;">
-								<span class="font-color-y"
-									style="font-size: 1.125rem;">{{this.$t('station')['enter']}}</span>
+								<span class="font-color-y font-color-y-s" >{{this.$t('station')['enter']}}</span>
 							</div>
 							<div style="width: 100%;">
-								<span class="font-color-b">{{this.$t('station')['title']}}</span>
+								<span class="font-color-b-title">{{this.$t('station')['title']}}</span>
 							</div>
-							<div style="margin-top:3.125rem;width: 100%;">
+							<div class="margin-station">
 								<span class="font-color-y">
 									{{this.$t('station')['text'][0]}}
 								</span>
 							</div>
-							<div style="margin-top: 1.875rem;width: 100%;padding-right:1.5625rem;">
+							<div class="margin-station">
 								<span class="font-color-y">
 									{{this.$t('station')['text'][1]}}
 								</span>
 							</div>
 							<!-- STARL Token -->
-							<div style="margin-top: 1.875rem;width: 50%;float: left;padding-right:1.5625rem;">
+							<div class="margin-station-s">
 								<div style="width: 100%;">
 									<span class="font-color-b"
 										style="font-size: 1.125rem;">{{this.$t('station')['c'][0]['title']}}</span>
@@ -91,7 +88,7 @@
 								</div>
 							</div>
 							<!-- Profile -->
-							<div style="margin-top: 1.875rem;width: 50%;float: right;padding-right:1.5625rem;">
+							<div class="margin-station-s">
 								<div style="width: 100%;">
 									<span class="font-color-b"
 										style="font-size: 1.125rem;">{{this.$t('station')['c'][1]['title']}}</span>
@@ -103,7 +100,7 @@
 								</div>
 							</div>
 							<!-- SATE NFTs -->
-							<div style="margin-top: 1.875rem;width: 50%;float: left;padding-right:1.5625rem;">
+							<div class="margin-station-s">
 								<div style="width: 100%;">
 									<span class="font-color-b"
 										style="font-size: 1.125rem;">{{this.$t('station')['c'][2]['title']}}</span>
@@ -115,7 +112,7 @@
 								</div>
 							</div>
 							<!-- SATE NFTs -->
-							<div style="margin-top: 1.875rem;width: 50%;float: right;padding-right:1.5625rem;">
+							<div  class="margin-station-s">
 								<div style="width: 100%;">
 									<span class="font-color-b"
 										style="font-size: 1.125rem;">{{this.$t('station')['c'][3]['title']}}</span>
@@ -127,7 +124,7 @@
 								</div>
 							</div>
 							<!-- Gaming Portal -->
-							<div style="margin-top: 1.875rem;width: 50%;float: left;padding-right:1.5625rem;">
+							<div class="margin-station-s">
 								<div style="width: 100%;">
 									<span class="font-color-b"
 										style="font-size: 1.125rem;">{{this.$t('station')['c'][4]['title']}}</span>
@@ -139,7 +136,7 @@
 								</div>
 							</div>
 							<!-- Gaming Portal -->
-							<div style="margin-top: 1.875rem;width: 50%;float: left;padding-right:1.5625rem;">
+							<div class="margin-station-s">
 								<div style="width: 100%;">
 									<span class="font-color-b"
 										style="font-size: 1.125rem;">{{this.$t('station')['c'][5]['title']}}</span>
@@ -159,7 +156,7 @@
 								<logo class="logo"></logo>
 							</div>
 						</div>
-						<div style="width: 50%;float: right;">
+						<div class="meo">
 							<div style="width:100%;float: right;margin-top:5%;">
 								<!-- Meo Satelite卡片 -->
 								<div class="car-d" style="float: left;">
@@ -305,7 +302,7 @@
 			<!-- ENTER THE STARL METAVERSE -->
 			<div class="margi-top-50">
 				<div style="width: 100%;">
-					<span class="font-color-y" style="font-size: 1.125rem;">{{this.$t('station')['enter']}}</span>
+					<span class="font-color-y">{{this.$t('station')['enter']}}</span>
 				</div>
 				<div style="width: 100%;">
 					<span class="font-color-b">{{this.$t('station')['title']}}</span>
@@ -666,7 +663,7 @@
 		}
 	}
 
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 950px) {
 
 		.warp {
 			padding: 0 0 0px;

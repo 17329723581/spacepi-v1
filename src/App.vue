@@ -108,7 +108,7 @@ export default {
     font-size: 1.5rem;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .back-top {
     position: fixed;
     bottom: 20px;
@@ -126,4 +126,5 @@ export default {
     }
   }
 }
+@import "./css/index";
 </style>

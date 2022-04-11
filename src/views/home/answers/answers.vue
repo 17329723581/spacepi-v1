@@ -2,11 +2,11 @@
 	<div class="bg-t" style="width: 100%;height: auto;float: left;position: relative;">
 		<div class="container">
 			<div class="warp">
-				<div class=" layout-c" style="margin-top:15%;">
+				<div class="layout-c answers">
 					<div>
 						<span class="font-title-color-b">{{this.$t('answers')['title']}}</span>
 					</div>
-					<div style="display: flex;justify-content: center;">
+					<div class="answers-text">
 						<div class="content-c">
 							<span class="font-content-color-y">{{this.$t('answers')['text']}}</span>
 						</div>
